@@ -1,0 +1,15 @@
+
+
+    <main id="inhalt" class="col-12 col-md-9">
+       <select name="select" id="select"    [(ngModel)]="selected"     (change)="veraendern()">
+        <option value="default"   selected     >Nichts gesetzt</option>
+        <option *ngFor= "let i of liste"   [ngValue]="i"   > {{i.name}} </option>
+       </select>
+	  <button id="Absenden" type="submit" (click)="absenden()"> Absenden </button>
+    </main>
+
+<div>Nach dem Absenden erhalten Sie eine Übersicht über die Daten für ihre Auswahl: {{selected!=="default"? selected.name:"" }}</div>
+<br> <br>
+<div>Aktuelle Leistung in kWh: {{power}}</div>
+<div>Maximale Leistung in kWh: {{max}}</div>
+<div>Differenz der Leistung in kWh: {{(max-power)}}</div>

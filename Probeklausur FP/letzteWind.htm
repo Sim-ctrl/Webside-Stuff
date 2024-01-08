@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Windmühle</title>
+</head>
+<style>
+
+#ja{
+position: relative;
+display: flex;
+background-color: lightgrey;
+width: 600px;
+height: 600px;
+align-items: center;
+justify-content: center;
+margin: auto;
+}
+#nein{
+
+    margin-top: 50%;
+}
+
+.blatt{
+background-color: aquamarine;
+    height: 20px;
+    width: 60px;
+    position: absolute;
+    margin-left: 90px;;
+    border-radius: 0px 0px 05px 30px;
+}
+.motor{
+background-color: burlywood;
+    height: 05px;
+    width: 150px;
+    position: absolute;
+    margin-top: -2px;;
+}
+#wingone{
+transform-origin: 0px;
+position: relative;
+rotate: 0deg;
+}#wingtwo{
+transform-origin: 0px;
+position: relative;
+rotate: 90deg;
+}#wingtree{
+transform-origin: 0px;
+position: relative;
+rotate: 180deg;
+}#wingfour{
+transform-origin: 0px;
+position: relative;
+rotate: 270deg;
+}
+#dot{
+    background-color: blueviolet;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    rotate:270deg;
+    margin-top: 48.5%;
+    margin-left: -9px;
+}
+
+
+</style>
+<body>
+<container id="ja"><container id="nein">
+    
+<div id="wingone">  <div class="blatt"> </div> <div class="motor"> </div> </div>
+<div id="wingtwo">  <div class="blatt"> </div> <div class="motor"> </div> </div>
+<div id="wingtree">  <div class="blatt"> </div> <div class="motor"> </div> </div>
+<div id="wingfour">  <div class="blatt"> </div> <div class="motor"> </div> </div>
+
+</container><div id="dot"> (:</div> 
+</container>
+
+<script>
+document.getElementById("dot").addEventListener("mouseenter",mpuseDrueber)
+document.getElementById("dot").addEventListener("mouseleave", mouseWeg)
+var interval =null;
+let r = 0; 
+
+
+function mpuseDrueber(){
+
+intervall = setInterval(function(){
+r++;
+document.getElementById("nein").style.transform = "rotate("+r+"deg)";
+
+
+
+},10)
+
+
+}
+function mouseWeg(){
+
+clearInterval(intervall);
+
+}
+
+
+</script>
+</body>
+</html>
